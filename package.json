@@ -1,6 +1,6 @@
 {
 	"name": "gotomanual",
-	"displayName": "gotoManual",
+	"displayName": "goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
     "version": "0.0.1",
     "publisher": "raheelhsn",
@@ -21,17 +21,37 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.gotomanual"
 	],
 	"main": "./extension.js",
 	"contributes": {
+        "menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "extension.gotomanual",
+					"group": "navigation"
+				}
+			]
+		},
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.gotomanual",
+				"title": "Goto Manual"
 			}
-		]
-	},
+        ],
+        "configuration": {
+            "title": "Goto Manual Config",
+            "type": "object",
+            "properties": {
+                "gotomanual.QueryTemplate": {
+                    "type": "string",
+                    "default": "https://www.google.com/search?q=%SELECTION%",
+                    "description": "Search Query"
+                }
+            }
+        }
+    },
 	"scripts": {
 		"test": "node ./test/runTest.js"
 	},
@@ -45,5 +65,5 @@
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
 		"vscode-test": "^1.2.0"
-	}
+    }
 }

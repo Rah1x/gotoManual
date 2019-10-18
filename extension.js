@@ -1,37 +1,74 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+const ext_name = "gotomanual";
+const CMD_ID = "extension."+ext_name;
 
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
+function activate(context)
+{
+    //console.log('Congratulations, your extension "gotomanual" is now active!');
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "gotomanual" is now active!');
+    const disposable = vscode.commands.registerTextEditorCommand(CMD_ID, openManual);
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+	//let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
+    //vscode.window.showInformationMessage('Hello World Hello hello!');
+	//});
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World Hello hello!');
-	});
-
-	context.subscriptions.push(disposable);
+    context.subscriptions.push(disposable);
 }
 exports.activate = activate;
 
-// this method is called when your extension is deactivated
+
 function deactivate() {}
+//exports.deactivate = deactivate;
 
 module.exports = {
 	activate,
 	deactivate
 }
+
+// --------------------------------------------
+
+//Function to launch the Search URL in default browser
+function openManual()
+{
+    var selectedText = GetSelectedText();
+    if(!selectedText) return;
+
+
+    let searchCfg = vscode.workspace.getConfiguration(ext_name);
+    const queryTemplate = searchCfg.get("QueryTemplate");
+
+    let uriText = encodeURI(selectedText);
+    let query = queryTemplate.replace("%SELECTION%", uriText);
+
+    vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(query));
+}
+
+
+/** Get Selected Text **/
+function GetSelectedText()
+{
+    const documentText = vscode.window.activeTextEditor.document.getText();
+    if (!documentText) {
+      return "";
+    }
+    let activeSelection = vscode.window.activeTextEditor.selection;
+    if (activeSelection.isEmpty) {
+      return "";
+    }
+    const selStartoffset = vscode.window.activeTextEditor.document.offsetAt(
+      activeSelection.start
+    );
+    const selEndOffset = vscode.window.activeTextEditor.document.offsetAt(
+      activeSelection.end
+    );
+
+    let selectedText = documentText.slice(selStartoffset, selEndOffset).trim();
+    selectedText = selectedText.replace(/\s\s+/g, " ");
+    return selectedText;
+}
+
+
+

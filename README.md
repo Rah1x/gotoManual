@@ -21,10 +21,14 @@ On the first run you would need to add the url base (for example `google.com`) t
 This extension contributes the following settings:
 
 * `gotomanual.url.Google`: url for Google Search selected text
-* `gotomanual.url.PHP`: url for PHP `Function` search via php.net
+* `gotomanual.url.PHP`: url for PHP 'function' search via php.net
 * `gotomanual.url.JS`: url for JS Reference Search via W3School
 
 
-### 0.0.2
+## 0.0.3
+
+Minor fixes
+
+## 0.0.1
 
 Initial release

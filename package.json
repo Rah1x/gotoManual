@@ -3,7 +3,7 @@
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
     "version": "0.0.1",
-    "publisher": "Raheel Hasan",
+    "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
     },

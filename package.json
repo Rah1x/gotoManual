@@ -1,9 +1,9 @@
 {
 	"name": "gotomanual",
-	"displayName": "goto Manual",
+	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
     "version": "0.0.1",
-    "publisher": "raheelhsn",
+    "publisher": "Rah1x",
 	"engines": {
 		"vscode": "^1.39.0"
     },
@@ -19,35 +19,71 @@
 	},
 	"categories": [
 		"Other"
+    ],
+    "keywords": [
+        "manual search",
+        "goto manual",
+        "php manual",
+        "js manual",
+        "google search"
+    ],
+    "main": "./extension.js",
+    "activationEvents": [
+        "onCommand:extension.gotoGoogle",
+        "onCommand:extension.gotomanualPHP",
+        "onCommand:extension.gotomanualJS"
 	],
-	"activationEvents": [
-		"onCommand:extension.gotomanual"
-	],
-	"main": "./extension.js",
 	"contributes": {
         "menus": {
 			"editor/context": [
-				{
+                {
 					"when": "editorHasSelection",
-					"command": "extension.gotomanual",
-					"group": "navigation"
-				}
+                    "group": "navigation",
+                    "command": "extension.gotomanualPHP"
+                },
+                {
+					"when": "editorHasSelection",
+                    "group": "navigation",
+                    "command": "extension.gotomanualJS"
+				},
+                {
+					"when": "editorHasSelection",
+                    "group": "navigation",
+                    "command": "extension.gotoGoogle"
+                }
 			]
 		},
 		"commands": [
 			{
-				"command": "extension.gotomanual",
-				"title": "Goto Manual"
+				"command": "extension.gotomanualPHP",
+                "title": "Goto: 1. PHP Function Manual"
+            },
+            {
+				"command": "extension.gotomanualJS",
+                "title": "Goto: 2. JS Manual"
+            },
+            {
+				"command": "extension.gotoGoogle",
+                "title": "Goto: 3. Google Search"
 			}
         ],
         "configuration": {
-            "title": "Goto Manual Config",
-            "type": "object",
+            "title": "Goto Manual Configs",
             "properties": {
-                "gotomanual.QueryTemplate": {
+                "gotomanual.url.Google": {
                     "type": "string",
                     "default": "https://www.google.com/search?q=%SELECTION%",
-                    "description": "Search Query"
+                    "description": "Google Search selected text"
+                },
+                "gotomanual.url.PHP": {
+                    "type": "string",
+                    "default": "https://www.php.net/manual/en/function.%SELECTION%.php",
+                    "description": "PHP `Function` search via php.net"
+                },
+                "gotomanual.url.JS": {
+                    "type": "string",
+                    "default": "https://www.w3schools.com/jsref/jsref_%SELECTION%.asp",
+                    "description": "JS Reference Search via W3School"
                 }
             }
         }

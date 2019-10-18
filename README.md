@@ -8,7 +8,7 @@ Currently supporting PHP Manual for functions only (via PHP.net), JS Manual (via
 
 ## Requirements
 
-On the first run yuou would need to add the url base to trusted domains when you see that popup
+On the first run you would need to add the url base (for example `google.com`) to trusted domains when you see that popup
 
 ## Extension Settings
 

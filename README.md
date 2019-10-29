@@ -17,6 +17,7 @@ Currently supporting:
 * and the good ol google search
 
 This is what it looks like once installed and when you right-click on a piece of code:
+
 ![Output](resources/output.png)
 
 I will update this more later and add more options, but if you have anything in mind just create an issue with the label `enhancement` at the github repo and I will add it as well:

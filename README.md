@@ -2,6 +2,12 @@
 
 Go to various manuals with one click (opens in browser).
 
+VSCode Marketplace:
+https://marketplace.visualstudio.com/items?itemName=rhasan.gotomanual
+
+Github Repo:
+https://github.com/Rah1x/gotoManual
+
 ## Features
 
 Currently supporting:

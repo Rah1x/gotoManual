@@ -44,7 +44,7 @@ function openManual(selectedText, settings)
 {
     if(!selectedText) return;
 
-    vscode.window.showInformationMessage('GotoManual: finding \''+selectedText+'\'...');
+    vscode.window.showInformationMessage('goTo: finding \''+selectedText+'\'...');
 
     let query = settings.replace("%SELECTION%", encodeURI(selectedText));
     vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(query));

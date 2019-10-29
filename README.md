@@ -1,6 +1,6 @@
 # README
 
-Goto various manual with one click (opens in browser).
+Go to various manuals with one click (opens in browser).
 
 ## Features
 
@@ -10,7 +10,8 @@ Currently supporting:
 * JS Manual (via W3School),
 * and the good ol google search
 
-I will update this more later and add more options.
+I will update this more later and add more options, but if you have anything in mind just create an issue with the label `enhancement` at the github repo and I will add it as well:
+https://github.com/Rah1x/gotoManual
 
 ## Requirements
 
@@ -25,7 +26,7 @@ This extension contributes the following settings:
 * `gotomanual.url.JS`: url for JS Reference Search via W3School
 
 
-## 0.0.3
+## 0.0.4
 
 Minor fixes
 

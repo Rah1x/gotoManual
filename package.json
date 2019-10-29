@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -56,15 +56,15 @@
 		"commands": [
 			{
 				"command": "extension.gotomanualPHP",
-                "title": "Goto: PHP Function Manual"
+                "title": "> goTo: PHP Function Manual"
             },
             {
 				"command": "extension.gotomanualJS",
-                "title": "Goto: JS Manual"
+                "title": "> goTo: JS Manual"
             },
             {
 				"command": "extension.gotoGoogle",
-                "title": "Goto: Google Search"
+                "title": "> goTo: Google Search"
 			}
         ],
         "configuration": {

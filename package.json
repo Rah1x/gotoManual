@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.0.5",
+    "version": "0.0.51",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -21,11 +21,14 @@
 		"Other"
     ],
     "keywords": [
+        "manual",
+        "manual integration",
         "manual search",
-        "goto manual",
+        "google",
+        "google search",
         "php manual",
         "js manual",
-        "google search"
+        "css manual"
     ],
     "main": "./extension.js",
     "activationEvents": [

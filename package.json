@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.0.42",
+    "version": "0.0.5",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -34,39 +34,6 @@
         "onCommand:extension.gotomanualJS"
 	],
 	"contributes": {
-        "menus": {
-			"editor/context": [
-                {
-					"when": "editorHasSelection",
-                    "group": "navigation@1.1",
-                    "command": "extension.gotomanualPHP"
-                },
-                {
-					"when": "editorHasSelection",
-                    "group": "navigation@1.1",
-                    "command": "extension.gotomanualJS"
-				},
-                {
-					"when": "editorHasSelection",
-                    "group": "navigation@1.1",
-                    "command": "extension.gotoGoogle"
-                }
-			]
-		},
-		"commands": [
-			{
-				"command": "extension.gotomanualPHP",
-                "title": "> goTo: PHP Function Manual"
-            },
-            {
-				"command": "extension.gotomanualJS",
-                "title": "> goTo: JS Manual"
-            },
-            {
-				"command": "extension.gotoGoogle",
-                "title": "> goTo: Google Search"
-			}
-        ],
         "configuration": {
             "title": "Goto Manual Configs",
             "properties": {
@@ -84,9 +51,58 @@
                     "type": "string",
                     "default": "https://www.w3schools.com/jsref/jsref_%SELECTION%.asp",
                     "description": "JS Reference Search via W3School"
+                },
+                "gotomanual.url.CSS": {
+                    "type": "string",
+                    "default": "https://developer.mozilla.org/en-US/docs/Web/CSS/%SELECTION%",
+                    "description": "CSS Reference Search via developer.mozilla.org"
                 }
             }
-        }
+        },
+
+        "commands": [
+            {
+				"command": "extension.gotoGoogle",
+                "title": "> goTo: 'Google Search"
+            },
+            {
+				"command": "extension.gotomanualPHP",
+                "title": "> goTo: PHP Function Manual"
+            },
+            {
+				"command": "extension.gotomanualJS",
+                "title": "> goTo: JS Manual"
+            },
+            {
+				"command": "extension.gotomanualCSS",
+                "title": "> goTo: CSS Manual"
+			}
+        ],
+
+        "menus": {
+			"editor/context": [
+                {
+					"when": "editorHasSelection",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotoGoogle"
+                },
+                {
+					"when": "editorHasSelection",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualPHP"
+                },
+                {
+					"when": "editorHasSelection",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualJS"
+                },
+                {
+					"when": "editorHasSelection",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualCSS"
+				}
+			]
+		}
     },
 	"scripts": {
 		"test": "node ./test/runTest.js"

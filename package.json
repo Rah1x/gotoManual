@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.0.51",
+    "version": "0.0.52",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"

@@ -24,6 +24,11 @@ This is what it looks like once installed and when you right-click on a piece of
 I will update this more later and add more options, but if you have anything in mind just create an issue with the label `enhancement` at the github repo and I will add it as well:
 https://github.com/Rah1x/gotoManual
 
+## Special Usage Instructions
+
+1) **CSS**
+For pseudo class or elements, please select the starting colons (:) as well. For example `:last-child` with the colons instead of just `last-child`
+
 ## Requirements
 
 On the first run you would need to add the url base (for example `google.com`) to the trusted domains.\

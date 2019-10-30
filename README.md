@@ -25,10 +25,11 @@ https://github.com/Rah1x/gotoManual
 
 ## Requirements
 
-On the first run you would need to add the url base (for example `google.com`) to trusted domains.
-So when you select any goTo menu for the first time you will a popup that looks like the following image, just click on `Configure Trusted Domains` (only if you see a trusted domain btw).
+On the first run you would need to add the url base (for example `google.com`) to the trusted domains.
+So when you select any goTo menu for the first time you will see a popup that looks like the following image. Just click on `Configure Trusted Domains` (only if you see a trusted domain btw).
 
 ![Add To Trusted Step 1](resources/add_to_trusted_1.png)
+.
 ![Add To Trusted Step 2](resources/add_to_trusted_2.png)
 
 ## Extension Settings

@@ -40,7 +40,7 @@ This extension contributes the following settings:
 * `gotomanual.url.Google`: url for Google Search selected text
 * `gotomanual.url.PHP`: url for PHP 'function' search via php.net
 * `gotomanual.url.JS`: url for JS Reference Search via W3School
-
+* `gotomanual.url.CSS`: url for CSS Reference Search via developer.mozilla.org
 
 ## 0.0.5
 

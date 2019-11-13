@@ -53,7 +53,7 @@ This extension contributes the following settings:
 
 ## 0.0.55
 
-Editor's active language specific menu only = show only relevant menu. This means if you are working on a PHP file it will show all options, but if you are working on a css file it will only show `goTo: CSS` option. Meanwhile `goTo: Google Search` is always available.
+Language specific activation
 
 ## 0.0.5
 

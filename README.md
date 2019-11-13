@@ -10,7 +10,7 @@ https://github.com/Rah1x/gotoManual
 
 ## Features
 
-1) Supporting various manuals:
+1] Supporting various manuals:
 
 * PHP Manual for functions only (via PHP.net),
 * JS Manual (via W3School),
@@ -21,7 +21,7 @@ This is what it looks like once installed and when you right-click on a piece of
 
 ![Output](resources/output_2.png)
 
-2) Editor's active language specific menu only = show only relevant menu. This means if you are working on a PHP file it will show all options, but if you are working on a css file it will only show `goTo: CSS` option. Meanwhile `goTo: Google Search` is always available.
+2] Editor's active language specific menu only = show only relevant menu. This means if you are working on a PHP file it will show all options, but if you are working on a css file it will only show `goTo: CSS` option. Meanwhile `goTo: Google Search` is always available.
 
 I will update this later as we go and add more options, but if you have anything in mind (for example if you want another manual, or another file type for one of these languages) just create an issue with the label `enhancement` at the github repo and I will add it as well:
 https://github.com/Rah1x/gotoManual

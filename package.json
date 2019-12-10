@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.0.55",
+    "version": "0.0.56",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -91,17 +91,17 @@
                     "command": "extension.gotoGoogle"
                 },
                 {
-					"when": "editorHasSelection && editorLangId==php",
+					"when": "editorHasSelection && editorLangId=~/php|blade/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualPHP"
                 },
                 {
-					"when": "editorHasSelection && editorLangId=~/php|javascript|html|go|javascriptreact|typescript/",
+					"when": "editorHasSelection && editorLangId=~/php|blade|javascript|html|go|javascriptreact|typescript/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualJS"
                 },
                 {
-					"when": "editorHasSelection && editorLangId=~/php|less|css|html|scss|sass/",
+					"when": "editorHasSelection && editorLangId=~/php|blade|less|css|html|scss|sass/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualCSS"
 				}

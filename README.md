@@ -50,6 +50,7 @@ This extension contributes the following settings:
 * `gotomanual.url.PHP`: url for PHP 'function' search via php.net
 * `gotomanual.url.JS`: url for JS Reference Search via W3School
 * `gotomanual.url.CSS`: url for CSS Reference Search via developer.mozilla.org
+* `gotomanual.url.Python`: url for Python Reference Search via docs.python.org
 
 ## 0.0.6
 

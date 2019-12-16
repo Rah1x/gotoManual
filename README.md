@@ -53,7 +53,7 @@ This extension contributes the following settings:
 * `gotomanual.url.CSS`: url for CSS Reference Search via developer.mozilla.org
 * `gotomanual.url.Python`: url for Python Reference Search via docs.python.org
 
-## 0.0.6
+## 0.0.61
 
 Python Docs search added
 

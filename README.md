@@ -15,6 +15,7 @@ https://github.com/Rah1x/gotoManual
 * PHP Manual for functions only (via PHP.net),
 * JS Manual (via W3School),
 * CSS Manual (via developer.mozilla.org)
+* Python Document Search (via docs.python.org)
 * and the good ol google search
 
 This is what it looks like once installed and when you right-click on a piece of code:

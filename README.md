@@ -51,6 +51,10 @@ This extension contributes the following settings:
 * `gotomanual.url.JS`: url for JS Reference Search via W3School
 * `gotomanual.url.CSS`: url for CSS Reference Search via developer.mozilla.org
 
+## 0.0.6
+
+Python Docs search added
+
 ## 0.0.55
 
 Language specific activation

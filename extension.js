@@ -30,6 +30,10 @@ function activate(context)
     const css_m = vscode.commands.registerCommand('extension.gotomanualCSS', function() {
         openManual(GetSelectedText(), config.get("CSS"));
     }); context.subscriptions.push(css_m);
+
+    const python_m = vscode.commands.registerCommand('extension.gotomanualPython', function() {
+        openManual(GetSelectedText(), config.get("Python"));
+    }); context.subscriptions.push(python_m);
 }
 exports.activate = activate;
 

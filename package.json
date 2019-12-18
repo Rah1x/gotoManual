@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.0.62",
+    "version": "0.0.63",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -11,7 +11,7 @@
 		"name": "Raheel Hasan",
 		"url": "https://github.com/Rah1x"
     },
-    "icon": "resources/icon.png",
+    "icon": "resources/icon_2.png",
 	"homepage": "https://github.com/Rah1x/gotoManual",
 	"repository": {
 		"type": "git",

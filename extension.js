@@ -20,7 +20,7 @@ function activate(context)
     }); context.subscriptions.push(google_m);
 
     const php_m = vscode.commands.registerCommand('extension.gotomanualPHP', function() {
-        openManual(GetSelectedText().replace('_', '-'), config.get("PHP"));
+        openManual(GetSelectedText().replace(/_/g, '-'), config.get("PHP"));
     }); context.subscriptions.push(php_m);
 
     const js_m = vscode.commands.registerCommand('extension.gotomanualJS', function() {

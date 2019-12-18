@@ -1,3 +1,6 @@
-# Change Log
+- (19 Dec, 2019) Minor fixes for PHP search
+- (16 Dec, 2019) Python Docs search added
+- (13 Nov, 2019) Language specific activation
+- (30 Oct, 2019) CSS manual added
 - (29 Oct, 2019) Minor Changes
 - (18 Oct, 2019) Initial release

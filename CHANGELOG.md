@@ -1,3 +1,4 @@
+- (20 Dec, 2019) Golang search added
 - (19 Dec, 2019) Minor fixes for PHP search
 - (16 Dec, 2019) Python Docs search added
 - (13 Nov, 2019) Language specific activation

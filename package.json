@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.0.63",
+    "version": "0.1.1",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -26,15 +26,17 @@
         "manual search",
         "google",
         "google search",
+        "php",
         "php manual",
+        "js",
         "js manual",
         "javascript manual",
-        "css manual",
-        "python manual",
-        "php",
         "css",
-        "js",
-        "python"
+        "css manual",
+        "python",
+        "python manual",
+        "Golang",
+        "Golang Manual"
     ],
     "main": "./extension.js",
     "activationEvents": [
@@ -42,7 +44,8 @@
         "onCommand:extension.gotomanualPHP",
         "onCommand:extension.gotomanualJS",
         "onCommand:extension.gotomanualCSS",
-        "onCommand:extension.gotomanualPython"
+        "onCommand:extension.gotomanualPython",
+        "onCommand:extension.gotomanualGolang"
 	],
 	"contributes": {
         "configuration": {
@@ -51,7 +54,7 @@
                 "gotomanual.url.Google": {
                     "type": "string",
                     "default": "https://www.google.com/search?q=%SELECTION%",
-                    "description": "Google Search selected text"
+                    "description": "Google search selected text"
                 },
                 "gotomanual.url.PHP": {
                     "type": "string",
@@ -61,17 +64,22 @@
                 "gotomanual.url.JS": {
                     "type": "string",
                     "default": "https://www.w3schools.com/jsref/jsref_%SELECTION%.asp",
-                    "description": "JS Reference Search via W3School"
+                    "description": "JS Reference search via W3School"
                 },
                 "gotomanual.url.CSS": {
                     "type": "string",
                     "default": "https://developer.mozilla.org/en-US/docs/Web/CSS/%SELECTION%",
-                    "description": "CSS Reference Search via developer.mozilla.org"
+                    "description": "CSS Reference search via developer.mozilla.org"
                 },
                 "gotomanual.url.Python": {
                     "type": "string",
                     "default": "https://docs.python.org/3/search.html?check_keywords=yes&area=default&q=%SELECTION%",
-                    "description": "Python Docs Search via docs.python.org"
+                    "description": "Python Docs search via docs.python.org"
+                },
+                "gotomanual.url.Golang": {
+                    "type": "string",
+                    "default": "https://golang.org/search?q=%SELECTION%",
+                    "description": "Golang manual search via golang.org"
                 }
             }
         },
@@ -96,6 +104,10 @@
             {
 				"command": "extension.gotomanualPython",
                 "title": "> goTo: Python Manual"
+            },
+            {
+				"command": "extension.gotomanualGolang",
+                "title": "> goTo: Golang Manual"
 			}
         ],
 
@@ -112,7 +124,7 @@
                     "command": "extension.gotomanualPHP"
                 },
                 {
-					"when": "editorHasSelection && editorLangId=~/php|blade|javascript|html|go|javascriptreact|typescript/",
+					"when": "editorHasSelection && editorLangId=~/php|blade|javascript|html|javascriptreact|typescript/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualJS"
                 },
@@ -125,6 +137,11 @@
 					"when": "editorHasSelection && editorLangId=~/py/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualPython"
+                },
+                {
+					"when": "editorHasSelection && editorLangId==go",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualGolang"
                 }
 			]
 		}

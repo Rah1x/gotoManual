@@ -15,7 +15,8 @@ https://github.com/Rah1x/gotoManual
 * PHP Manual for functions only (via PHP.net),
 * JS Manual (via W3School),
 * CSS Manual (via developer.mozilla.org)
-* Python Document Search (via docs.python.org)
+* Python Document search (via docs.python.org)
+* Golang search (via golang.org)
 * and the good ol google search
 
 This is what it looks like once installed and when you right-click on a piece of code:
@@ -47,11 +48,16 @@ So when you select any goTo menu for the first time you will see a popup that lo
 
 This extension contributes the following settings:
 
-* `gotomanual.url.Google`: url for Google Search selected text
+* `gotomanual.url.Google`: url for Google search selected text
 * `gotomanual.url.PHP`: url for PHP 'function' search via php.net
-* `gotomanual.url.JS`: url for JS Reference Search via W3School
-* `gotomanual.url.CSS`: url for CSS Reference Search via developer.mozilla.org
-* `gotomanual.url.Python`: url for Python Reference Search via docs.python.org
+* `gotomanual.url.JS`: url for JS reference search via W3School
+* `gotomanual.url.CSS`: url for CSS reference search via developer.mozilla.org
+* `gotomanual.url.Python`: url for Python reference search via docs.python.org
+* `gotomanual.url.Golang`: url for Golang reference search via docs.python.org
+
+## 0.1.1
+
+GoLang Docs search added
 
 ## 0.0.61
 

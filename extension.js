@@ -1,5 +1,4 @@
 const vscode = require('vscode');
-
 const proj_name = "gotomanual";
 
 /**
@@ -14,27 +13,34 @@ function activate(context)
     //});
 
     let config = vscode.workspace.getConfiguration(proj_name+'.url');
+    let ext_starts = 'extension.gotomanual';
 
     const google_m = vscode.commands.registerCommand('extension.gotoGoogle', function() {
         openManual(GetSelectedText(), config.get("Google"));
     }); context.subscriptions.push(google_m);
 
-    const php_m = vscode.commands.registerCommand('extension.gotomanualPHP', function() {
+    const php_m = vscode.commands.registerCommand(ext_starts+'PHP', function() {
         openManual(GetSelectedText().replace(/_/g, '-'), config.get("PHP"));
     }); context.subscriptions.push(php_m);
 
-    const js_m = vscode.commands.registerCommand('extension.gotomanualJS', function() {
+    const js_m = vscode.commands.registerCommand(ext_starts+'JS', function() {
         openManual(GetSelectedText(), config.get("JS"));
     }); context.subscriptions.push(js_m);
 
-    const css_m = vscode.commands.registerCommand('extension.gotomanualCSS', function() {
+    const css_m = vscode.commands.registerCommand(ext_starts+'CSS', function() {
         openManual(GetSelectedText(), config.get("CSS"));
     }); context.subscriptions.push(css_m);
 
-    const python_m = vscode.commands.registerCommand('extension.gotomanualPython', function() {
+    const python_m = vscode.commands.registerCommand(ext_starts+'Python', function() {
         openManual(GetSelectedText(), config.get("Python"));
     }); context.subscriptions.push(python_m);
-}
+
+    const golang_m = vscode.commands.registerCommand(ext_starts+'Golang', function() {
+        openManual(GetSelectedText(), config.get("Golang"));
+    }); context.subscriptions.push(golang_m);
+
+}//end func..
+
 exports.activate = activate;
 
 function deactivate() {}

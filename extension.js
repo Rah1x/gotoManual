@@ -72,7 +72,7 @@ function openManual(selectedText, settings, findin)
 
     vscode.window.showInformationMessage('goTo: finding \''+selectedText+'\'...');
 
-    if(findin=='google')
+    if(findin=='google' && vscode.window.activeTextEditor.document.languageId!='plaintext')
     selectedText = vscode.window.activeTextEditor.document.languageId+' '+selectedText;
 
     let query = settings.replace("%SELECTION%", encodeURI(selectedText));

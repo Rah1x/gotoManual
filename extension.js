@@ -13,12 +13,30 @@ function activate(context)
     //});
 
     let config = vscode.workspace.getConfiguration(proj_name+'.url');
-    let ext_starts = 'extension.gotomanual';
 
+    //Google search - done with different keyword
     const google_m = vscode.commands.registerCommand('extension.gotoGoogle', function() {
         openManual(GetSelectedText(), config.get("Google"));
     }); context.subscriptions.push(google_m);
 
+
+    let ext_starts = 'extension.gotomanual';
+    let cmds = ['PHP', 'JS', 'CSS', 'Python', 'Golang', 'CPP'];
+
+    cmds.forEach(function(c)
+    {
+        let cmd_m = vscode.commands.registerCommand(ext_starts+c, function()
+        {
+            if(c=='PHP')
+            openManual(GetSelectedText().replace(/_/g, '-'), config.get(c));
+            else
+            openManual(GetSelectedText(), config.get(c));
+        });
+
+        context.subscriptions.push(cmd_m);
+    });
+
+    /*
     const php_m = vscode.commands.registerCommand(ext_starts+'PHP', function() {
         openManual(GetSelectedText().replace(/_/g, '-'), config.get("PHP"));
     }); context.subscriptions.push(php_m);
@@ -38,6 +56,7 @@ function activate(context)
     const golang_m = vscode.commands.registerCommand(ext_starts+'Golang', function() {
         openManual(GetSelectedText(), config.get("Golang"));
     }); context.subscriptions.push(golang_m);
+    */
 
 }//end func..
 
@@ -54,6 +73,10 @@ module.exports = {
 // ----------------------------------------------------------------------------------------
 
 //Function to launch the Search URL in default browser
+/**
+ * @param {string} selectedText
+ * @param {string} settings
+ */
 function openManual(selectedText, settings)
 {
     if(!selectedText) return;
@@ -82,6 +105,3 @@ function GetSelectedText()
 
     return selectedText;
 }
-
-
-

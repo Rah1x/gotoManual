@@ -2,7 +2,7 @@
 	"name": "gotomanual",
 	"displayName": "Goto Manual",
 	"description": "Goto manual with one click (opens in browser)",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "publisher": "rhasan",
 	"engines": {
 		"vscode": "^1.39.0"
@@ -36,7 +36,11 @@
         "python",
         "python manual",
         "Golang",
-        "Golang Manual"
+        "Golang Manual",
+        "C++",
+        "C++ Manual",
+        "CPP",
+        "CPP Manual"
     ],
     "main": "./extension.js",
     "activationEvents": [
@@ -45,7 +49,8 @@
         "onCommand:extension.gotomanualJS",
         "onCommand:extension.gotomanualCSS",
         "onCommand:extension.gotomanualPython",
-        "onCommand:extension.gotomanualGolang"
+        "onCommand:extension.gotomanualGolang",
+        "onCommand:extension.gotomanualCPP"
 	],
 	"contributes": {
         "configuration": {
@@ -64,22 +69,27 @@
                 "gotomanual.url.JS": {
                     "type": "string",
                     "default": "https://www.w3schools.com/jsref/jsref_%SELECTION%.asp",
-                    "description": "JS Reference search via W3School"
+                    "description": "JS reference search via W3School"
                 },
                 "gotomanual.url.CSS": {
                     "type": "string",
                     "default": "https://developer.mozilla.org/en-US/docs/Web/CSS/%SELECTION%",
-                    "description": "CSS Reference search via developer.mozilla.org"
+                    "description": "CSS reference search via developer.mozilla.org"
                 },
                 "gotomanual.url.Python": {
                     "type": "string",
                     "default": "https://docs.python.org/3/search.html?check_keywords=yes&area=default&q=%SELECTION%",
-                    "description": "Python Docs search via docs.python.org"
+                    "description": "Python reference search via docs.python.org"
                 },
                 "gotomanual.url.Golang": {
                     "type": "string",
                     "default": "https://golang.org/search?q=%SELECTION%",
-                    "description": "Golang manual search via golang.org"
+                    "description": "Golang reference search via golang.org"
+                },
+                "gotomanual.url.CPP": {
+                    "type": "string",
+                    "default": "https://documentation.help/C-Cpp-Reference/%SELECTION%.html",
+                    "description": "C++ reference search via documentation.help"
                 }
             }
         },
@@ -108,6 +118,10 @@
             {
 				"command": "extension.gotomanualGolang",
                 "title": "> goTo: Golang Manual"
+            },
+            {
+				"command": "extension.gotomanualCPP",
+                "title": "> goTo: C++ Manual"
 			}
         ],
 
@@ -142,6 +156,11 @@
 					"when": "editorHasSelection && editorLangId==go",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualGolang"
+                },
+                {
+					"when": "editorHasSelection && editorLangId==cpp",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualCPP"
                 }
 			]
 		}

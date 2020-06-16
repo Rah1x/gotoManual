@@ -12,11 +12,12 @@ https://github.com/Rah1x/gotoManual
 
 1] Supporting various manuals:
 
-* PHP Manual for functions only (via PHP.net),
-* JS Manual (via W3School),
-* CSS Manual (via developer.mozilla.org)
-* Python Document search (via docs.python.org)
+* PHP manual for functions only (via PHP.net),
+* JS manual (via W3School),
+* CSS manual (via developer.mozilla.org)
+* Python document search (via docs.python.org)
 * Golang search (via golang.org)
+* C++ manual (via documentation.help)
 * and the good ol google search
 
 This is what it looks like once installed and when you right-click on a piece of code:
@@ -53,15 +54,21 @@ This extension contributes the following settings:
 * `gotomanual.url.JS`: url for JS reference search via W3School
 * `gotomanual.url.CSS`: url for CSS reference search via developer.mozilla.org
 * `gotomanual.url.Python`: url for Python reference search via docs.python.org
-* `gotomanual.url.Golang`: url for Golang reference search via docs.python.org
+* `gotomanual.url.Golang`: url for Golang reference search via golang.org
+* `gotomanual.url.CPP`: url for C++ reference search via documentation.help
+
+## 0.2.0
+
+C++ reference search added
+Extension script code improved
 
 ## 0.1.1
 
-GoLang Docs search added
+GoLang reference search added
 
 ## 0.0.61
 
-Python Docs search added
+Python reference search added
 
 ## 0.0.55
 

@@ -16,7 +16,7 @@ function activate(context)
 
     //Google search - done with different keyword
     const google_m = vscode.commands.registerCommand('extension.gotoGoogle', function() {
-        openManual(GetSelectedText(), config.get("Google"));
+        openManual(GetSelectedText(), config.get("Google"), 'google');
     }); context.subscriptions.push(google_m);
 
 
@@ -28,9 +28,9 @@ function activate(context)
         let cmd_m = vscode.commands.registerCommand(ext_starts+c, function()
         {
             if(c=='PHP')
-            openManual(GetSelectedText().replace(/_/g, '-'), config.get(c));
+            openManual(GetSelectedText().replace(/_/g, '-'), config.get(c), c);
             else
-            openManual(GetSelectedText(), config.get(c));
+            openManual(GetSelectedText(), config.get(c), c);
         });
 
         context.subscriptions.push(cmd_m);
@@ -44,18 +44,6 @@ function activate(context)
     const js_m = vscode.commands.registerCommand(ext_starts+'JS', function() {
         openManual(GetSelectedText(), config.get("JS"));
     }); context.subscriptions.push(js_m);
-
-    const css_m = vscode.commands.registerCommand(ext_starts+'CSS', function() {
-        openManual(GetSelectedText(), config.get("CSS"));
-    }); context.subscriptions.push(css_m);
-
-    const python_m = vscode.commands.registerCommand(ext_starts+'Python', function() {
-        openManual(GetSelectedText(), config.get("Python"));
-    }); context.subscriptions.push(python_m);
-
-    const golang_m = vscode.commands.registerCommand(ext_starts+'Golang', function() {
-        openManual(GetSelectedText(), config.get("Golang"));
-    }); context.subscriptions.push(golang_m);
     */
 
 }//end func..
@@ -76,12 +64,16 @@ module.exports = {
 /**
  * @param {string} selectedText
  * @param {string} settings
+ * @param {string} findin
  */
-function openManual(selectedText, settings)
+function openManual(selectedText, settings, findin)
 {
     if(!selectedText) return;
 
     vscode.window.showInformationMessage('goTo: finding \''+selectedText+'\'...');
+
+    if(findin=='google')
+    selectedText = vscode.window.activeTextEditor.document.languageId+' '+selectedText;
 
     let query = settings.replace("%SELECTION%", encodeURI(selectedText));
     vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(query));

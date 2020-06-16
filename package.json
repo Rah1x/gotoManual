@@ -1,24 +1,24 @@
 {
-	"name": "gotomanual",
-	"displayName": "Goto Manual",
-	"description": "Goto manual with one click (opens in browser)",
+    "name": "gotomanual",
+    "displayName": "Goto Manual",
+    "description": "Goto manual with one click (opens in browser)",
     "version": "0.2.0",
     "publisher": "rhasan",
-	"engines": {
-		"vscode": "^1.39.0"
+    "engines": {
+        "vscode": "^1.39.0"
     },
     "author": {
-		"name": "Raheel Hasan",
-		"url": "https://github.com/Rah1x"
+        "name": "Raheel Hasan",
+        "url": "https://github.com/Rah1x"
     },
     "icon": "resources/icon_2.png",
-	"homepage": "https://github.com/Rah1x/gotoManual",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Rah1x/gotoManual"
-	},
-	"categories": [
-		"Other"
+    "homepage": "https://github.com/Rah1x/gotoManual",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Rah1x/gotoManual"
+    },
+    "categories": [
+        "Other"
     ],
     "keywords": [
         "manual",
@@ -51,8 +51,8 @@
         "onCommand:extension.gotomanualPython",
         "onCommand:extension.gotomanualGolang",
         "onCommand:extension.gotomanualCPP"
-	],
-	"contributes": {
+    ],
+    "contributes": {
         "configuration": {
             "title": "Goto Manual Configs",
             "properties": {
@@ -93,90 +93,88 @@
                 }
             }
         },
-
         "commands": [
             {
-				"command": "extension.gotoGoogle",
+                "command": "extension.gotoGoogle",
                 "title": "> goTo: 'Google Search"
             },
             {
-				"command": "extension.gotomanualPHP",
+                "command": "extension.gotomanualPHP",
                 "title": "> goTo: PHP Function Manual"
             },
             {
-				"command": "extension.gotomanualJS",
+                "command": "extension.gotomanualJS",
                 "title": "> goTo: JS Manual"
             },
             {
-				"command": "extension.gotomanualCSS",
+                "command": "extension.gotomanualCSS",
                 "title": "> goTo: CSS Manual"
             },
             {
-				"command": "extension.gotomanualPython",
+                "command": "extension.gotomanualPython",
                 "title": "> goTo: Python Manual"
             },
             {
-				"command": "extension.gotomanualGolang",
+                "command": "extension.gotomanualGolang",
                 "title": "> goTo: Golang Manual"
             },
             {
-				"command": "extension.gotomanualCPP",
+                "command": "extension.gotomanualCPP",
                 "title": "> goTo: C++ Manual"
-			}
+            }
         ],
-
         "menus": {
-			"editor/context": [
+            "editor/context": [
                 {
-					"when": "editorHasSelection",
+                    "when": "editorHasSelection",
                     "group": "navigation@1.1",
                     "command": "extension.gotoGoogle"
                 },
                 {
-					"when": "editorHasSelection && editorLangId=~/php|blade/",
+                    "when": "editorHasSelection && editorLangId=~/php|blade/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualPHP"
                 },
                 {
-					"when": "editorHasSelection && editorLangId=~/php|blade|javascript|html|javascriptreact|typescript/",
+                    "when": "editorHasSelection && editorLangId=~/php|blade|javascript|html|javascriptreact|typescript/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualJS"
                 },
                 {
-					"when": "editorHasSelection && editorLangId=~/php|blade|less|css|html|scss|sass/",
+                    "when": "editorHasSelection && editorLangId=~/php|blade|less|css|html|scss|sass/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualCSS"
                 },
                 {
-					"when": "editorHasSelection && editorLangId=~/py/",
+                    "when": "editorHasSelection && editorLangId=~/py/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualPython"
                 },
                 {
-					"when": "editorHasSelection && editorLangId==go",
+                    "when": "editorHasSelection && editorLangId==go",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualGolang"
                 },
                 {
-					"when": "editorHasSelection && editorLangId==cpp",
+                    "when": "editorHasSelection && editorLangId==cpp",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualCPP"
                 }
-			]
-		}
+            ]
+        }
     },
-	"scripts": {
-		"test": "node ./test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^5.2.6",
-		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.39.0",
-		"eslint": "^5.13.0",
-		"glob": "^7.1.4",
-		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
-		"vscode-test": "^1.2.0"
+    "scripts": {
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.2",
+        "@types/mocha": "^5.2.6",
+        "@types/node": "^10.17.26",
+        "@types/vscode": "^1.46.0",
+        "eslint": "^5.13.0",
+        "glob": "^7.1.6",
+        "mocha": "^6.2.3",
+        "typescript": "^3.9.5",
+        "vscode-test": "^1.4.0"
     }
 }

@@ -59,7 +59,7 @@ This extension contributes the following settings:
 
 ## 0.2.0
 
-C++ reference search added
+C++ reference search added,
 Extension script code improved
 
 ## 0.1.1

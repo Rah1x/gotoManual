@@ -2,7 +2,7 @@
     "name": "gotomanual",
     "displayName": "Goto Manual",
     "description": "Goto manual with one click (opens in browser)",
-    "version": "0.2.21",
+    "version": "0.2.3",
     "publisher": "rhasan",
     "engines": {
         "vscode": "^1.39.0"
@@ -22,10 +22,15 @@
     ],
     "keywords": [
         "manual",
+        "documentation",
         "manual integration",
+        "reference search",
         "manual search",
+        "function reference",
         "google",
+        "google stackoverflow",
         "google search",
+        "stackoverflow search",
         "php",
         "php manual",
         "js",
@@ -45,6 +50,7 @@
     "main": "./extension.js",
     "activationEvents": [
         "onCommand:extension.gotoGoogle",
+        "onCommand:extension.gotoGoogleStackOverFlow",
         "onCommand:extension.gotomanualPHP",
         "onCommand:extension.gotomanualJS",
         "onCommand:extension.gotomanualCSS",
@@ -60,6 +66,11 @@
                     "type": "string",
                     "default": "https://www.google.com/search?q=%SELECTION%",
                     "description": "Google search selected text"
+                },
+                "gotomanual.url.GoogleStackOverFlow": {
+                    "type": "string",
+                    "default": "https://www.google.com/search?q=%SELECTION%+site%3Astackoverflow.com",
+                    "description": "Google search selected text for stackoverflow"
                 },
                 "gotomanual.url.PHP": {
                     "type": "string",
@@ -99,6 +110,10 @@
                 "title": "> goTo: 'Google Search"
             },
             {
+                "command": "extension.gotoGoogleStackOverFlow",
+                "title": "> goTo: 'Google Stackoverflow"
+            },
+            {
                 "command": "extension.gotomanualPHP",
                 "title": "> goTo: PHP Function Manual"
             },
@@ -129,6 +144,11 @@
                     "when": "editorHasSelection",
                     "group": "navigation@1.1",
                     "command": "extension.gotoGoogle"
+                },
+                {
+                    "when": "editorHasSelection",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotoGoogleStackOverFlow"
                 },
                 {
                     "when": "editorHasSelection && editorLangId=~/php|blade/",

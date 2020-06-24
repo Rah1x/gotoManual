@@ -19,13 +19,18 @@ function activate(context)
         openManual(GetSelectedText(), config.get("Google"), 'google');
     }); context.subscriptions.push(google_m);
 
+    //Stackoverflow via google search - done with different keyword
+    const googlestack_m = vscode.commands.registerCommand('extension.gotoGoogleStackOverFlow', function() {
+        openManual(GetSelectedText(), config.get("GoogleStackOverFlow"), 'GoogleStackOverFlow');
+    }); context.subscriptions.push(googlestack_m);
 
-    let ext_starts = 'extension.gotomanual';
+
+    let ext_base = 'extension.gotomanual';
     let cmds = ['PHP', 'JS', 'CSS', 'Python', 'Golang', 'CPP'];
 
     cmds.forEach(function(c)
     {
-        let cmd_m = vscode.commands.registerCommand(ext_starts+c, function()
+        let cmd_m = vscode.commands.registerCommand(ext_base+c, function()
         {
             if(c=='PHP')
             openManual(GetSelectedText().replace(/_/g, '-'), config.get(c), c);
@@ -35,16 +40,6 @@ function activate(context)
 
         context.subscriptions.push(cmd_m);
     });
-
-    /*
-    const php_m = vscode.commands.registerCommand(ext_starts+'PHP', function() {
-        openManual(GetSelectedText().replace(/_/g, '-'), config.get("PHP"));
-    }); context.subscriptions.push(php_m);
-
-    const js_m = vscode.commands.registerCommand(ext_starts+'JS', function() {
-        openManual(GetSelectedText(), config.get("JS"));
-    }); context.subscriptions.push(js_m);
-    */
 
 }//end func..
 
@@ -72,7 +67,7 @@ function openManual(selectedText, settings, findin)
 
     vscode.window.showInformationMessage('goTo: finding \''+selectedText+'\'...');
 
-    if(findin=='google' && vscode.window.activeTextEditor.document.languageId!='plaintext')
+    if((findin=='google' || findin=='GoogleStackOverFlow') && vscode.window.activeTextEditor.document.languageId!='plaintext')
     selectedText = vscode.window.activeTextEditor.document.languageId+' '+selectedText;
 
     let query = settings.replace("%SELECTION%", encodeURI(selectedText));

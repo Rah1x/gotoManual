@@ -24,7 +24,7 @@ This is what it looks like once installed and when you right-click on a piece of
 ![Output](resources/output_2.png)
 \
 \
-![Output](resources/demo_1.png)
+![Output](resources/demo_1.gif)
 
 2] Editor's active language specific menu only = show only relevant menu. This means if you are working on a PHP file it will show all options, but if you are working on a css file it will only show `goTo: CSS` option. Meanwhile `goTo: Google Search` is always available.
 

@@ -26,7 +26,7 @@ function activate(context)
 
 
     let ext_base = 'extension.gotomanual';
-    let cmds = ['PHP', 'JS', 'CSS', 'Python', 'Golang', 'CPP'];
+    let cmds = ['PHP', 'CSS', 'Python', 'Golang', 'CPP'];
 
     cmds.forEach(function(c)
     {

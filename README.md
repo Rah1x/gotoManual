@@ -13,7 +13,6 @@ https://github.com/Rah1x/gotoManual
 1] Supporting various manuals:
 
 * PHP manual for functions only (via PHP.net),
-* JS manual (via W3School),
 * CSS manual (via developer.mozilla.org)
 * Python document search (via docs.python.org)
 * Golang search (via golang.org)
@@ -55,7 +54,6 @@ This extension contributes the following settings:
 * `gotomanual.url.Google`: url for Google search selected text
 * `gotomanual.url.GoogleStackOverFlow`: url for Google search selected text for stackoverflow
 * `gotomanual.url.PHP`: url for PHP 'function' search via php.net
-* `gotomanual.url.JS`: url for JS reference search via W3School
 * `gotomanual.url.CSS`: url for CSS reference search via developer.mozilla.org
 * `gotomanual.url.Python`: url for Python reference search via docs.python.org
 * `gotomanual.url.Golang`: url for Golang reference search via golang.org

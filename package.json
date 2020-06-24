@@ -33,9 +33,6 @@
         "stackoverflow search",
         "php",
         "php manual",
-        "js",
-        "js manual",
-        "javascript manual",
         "css",
         "css manual",
         "python",
@@ -52,7 +49,6 @@
         "onCommand:extension.gotoGoogle",
         "onCommand:extension.gotoGoogleStackOverFlow",
         "onCommand:extension.gotomanualPHP",
-        "onCommand:extension.gotomanualJS",
         "onCommand:extension.gotomanualCSS",
         "onCommand:extension.gotomanualPython",
         "onCommand:extension.gotomanualGolang",
@@ -76,11 +72,6 @@
                     "type": "string",
                     "default": "https://www.php.net/manual/en/function.%SELECTION%.php",
                     "description": "PHP `Function` search via php.net"
-                },
-                "gotomanual.url.JS": {
-                    "type": "string",
-                    "default": "https://www.w3schools.com/jsref/jsref_%SELECTION%.asp",
-                    "description": "JS reference search via W3School"
                 },
                 "gotomanual.url.CSS": {
                     "type": "string",
@@ -118,10 +109,6 @@
                 "title": "> goTo: PHP Function Manual"
             },
             {
-                "command": "extension.gotomanualJS",
-                "title": "> goTo: JS Manual"
-            },
-            {
                 "command": "extension.gotomanualCSS",
                 "title": "> goTo: CSS Manual"
             },
@@ -154,11 +141,6 @@
                     "when": "editorHasSelection && editorLangId=~/php|blade/",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualPHP"
-                },
-                {
-                    "when": "editorHasSelection && editorLangId=~/php|blade|javascript|html|javascriptreact|typescript/",
-                    "group": "navigation@1.1",
-                    "command": "extension.gotomanualJS"
                 },
                 {
                     "when": "editorHasSelection && editorLangId=~/php|blade|less|css|html|scss|sass/",

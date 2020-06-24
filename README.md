@@ -23,6 +23,9 @@ https://github.com/Rah1x/gotoManual
 This is what it looks like once installed and when you right-click on a piece of code:
 
 ![Output](resources/output_2.png)
+\
+\
+![Output](resources/demo_1.png)
 
 2] Editor's active language specific menu only = show only relevant menu. This means if you are working on a PHP file it will show all options, but if you are working on a css file it will only show `goTo: CSS` option. Meanwhile `goTo: Google Search` is always available.
 
@@ -50,12 +53,16 @@ So when you select any goTo menu for the first time you will see a popup that lo
 This extension contributes the following settings:
 
 * `gotomanual.url.Google`: url for Google search selected text
+* `gotomanual.url.GoogleStackOverFlow`: url for Google search selected text for stackoverflow
 * `gotomanual.url.PHP`: url for PHP 'function' search via php.net
 * `gotomanual.url.JS`: url for JS reference search via W3School
 * `gotomanual.url.CSS`: url for CSS reference search via developer.mozilla.org
 * `gotomanual.url.Python`: url for Python reference search via docs.python.org
 * `gotomanual.url.Golang`: url for Golang reference search via golang.org
 * `gotomanual.url.CPP`: url for C++ reference search via documentation.help
+
+## 0.2.3
+Stackoverflow search (via google) added
 
 ## 0.2.0
 

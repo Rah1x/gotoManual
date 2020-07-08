@@ -2,7 +2,7 @@
     "name": "gotomanual",
     "displayName": "Goto Manual",
     "description": "Goto manual with one click (opens in browser)",
-    "version": "0.2.31",
+    "version": "0.2.32",
     "publisher": "rhasan",
     "engines": {
         "vscode": "^1.39.0"
@@ -61,12 +61,12 @@
                 "gotomanual.url.Google": {
                     "type": "string",
                     "default": "https://www.google.com/search?q=%SELECTION%",
-                    "description": "Google search selected text"
+                    "description": "Google the selected text"
                 },
                 "gotomanual.url.GoogleStackOverFlow": {
                     "type": "string",
                     "default": "https://www.google.com/search?q=%SELECTION%+site%3Astackoverflow.com",
-                    "description": "Google search selected text for stackoverflow"
+                    "description": "Google the selected text for stackoverflow"
                 },
                 "gotomanual.url.PHP": {
                     "type": "string",
@@ -102,7 +102,7 @@
             },
             {
                 "command": "extension.gotoGoogleStackOverFlow",
-                "title": "> goTo: 'Google Stackoverflow"
+                "title": "> goTo: 'Stackoverflow Search (google)"
             },
             {
                 "command": "extension.gotomanualPHP",

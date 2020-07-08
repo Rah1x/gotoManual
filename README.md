@@ -10,13 +10,14 @@ https://github.com/Rah1x/gotoManual
 
 ## Features
 
-1] Supporting various manuals:
+1] Supporting various Gotos:
 
 * PHP manual for functions only (via PHP.net),
 * CSS manual (via developer.mozilla.org)
 * Python document search (via docs.python.org)
 * Golang search (via golang.org)
 * C++ manual (via documentation.help)
+* Stachoverflow search via google
 * and the good ol google search
 
 This is what it looks like once installed and when you right-click on a piece of code:
@@ -26,10 +27,12 @@ This is what it looks like once installed and when you right-click on a piece of
 \
 ![Output](resources/demo_1.gif)
 
-2] Editor's active language specific menu only = show only relevant menu. This means if you are working on a PHP file it will show all options, but if you are working on a css file it will only show `goTo: CSS` option. Meanwhile `goTo: Google Search` is always available.
+2] Editor's active language specific menu only = show only relevant menu. This means if you are working on a PHP file it will show various options related to PHP, but if you are working on a css file it will only show `goTo: CSS` option. Meanwhile `goTo: Google Search` is always available.
 
 I will update this later as we go and add more options, but if you have anything in mind (for example if you want another manual, or another file type for one of these languages) just create an issue with the label `enhancement` at the github repo and I will add it as well:
 https://github.com/Rah1x/gotoManual
+
+3] Goto:Google search and Goto:stackoverflow search picks up the editor's language and adds it to the searched keyword to make the results more accurate. So if you select and search the keyworld "date" and the editor's language is php the google search will be very specific to php. While if its javascript the search results will be reflecting this language instead.
 
 
 ## Special Usage Instructions
@@ -51,8 +54,8 @@ So when you select any goTo menu for the first time you will see a popup that lo
 
 This extension contributes the following settings:
 
-* `gotomanual.url.Google`: url for Google search selected text
-* `gotomanual.url.GoogleStackOverFlow`: url for Google search selected text for stackoverflow
+* `gotomanual.url.Google`: url for Googling the selected text
+* `gotomanual.url.GoogleStackOverFlow`: url for Googling the selected text for stackoverflow
 * `gotomanual.url.PHP`: url for PHP 'function' search via php.net
 * `gotomanual.url.CSS`: url for CSS reference search via developer.mozilla.org
 * `gotomanual.url.Python`: url for Python reference search via docs.python.org

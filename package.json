@@ -175,7 +175,7 @@
         "@types/vscode": "^1.39.0",
         "eslint": "^5.13.0",
         "glob": "^7.1.6",
-        "mocha": "^6.2.3",
+        "mocha": "^10.2.0",
         "typescript": "^3.9.5",
         "vscode-test": "^1.4.0"
     }

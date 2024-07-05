@@ -34,7 +34,6 @@ https://github.com/Rah1x/gotoManual
 
 3] Goto:Google search and Goto:stackoverflow search picks up the editor's language and adds it to the searched keyword to make the results more accurate. So if you select and search the keyworld "date" and the editor's language is php the google search will be very specific to php. While if its javascript the search results will be reflecting this language instead.
 
-
 ## Special Usage Instructions
 
 1) **CSS**:
@@ -61,6 +60,9 @@ This extension contributes the following settings:
 * `gotomanual.url.Python`: url for Python reference search via docs.python.org
 * `gotomanual.url.Golang`: url for Golang reference search via golang.org
 * `gotomanual.url.CPP`: url for C++ reference search via documentation.help
+
+## 1.0.0
+New version based on vscode engine ^1.91.0
 
 ## 0.2.3
 Stackoverflow search (via google) added

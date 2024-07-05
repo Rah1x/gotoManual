@@ -2,24 +2,25 @@
     "name": "gotomanual",
     "displayName": "Goto Manual",
     "description": "Goto manual with one click (opens in browser)",
-    "version": "0.2.32",
+    "version": "1.0.0",
     "publisher": "rhasan",
-    "engines": {
-        "vscode": "^1.39.0"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Rah1x/gotoManual"
     },
+    "engines": {
+        "vscode": "^1.91.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Other"
+    ],
     "author": {
         "name": "Raheel Hasan",
         "url": "https://github.com/Rah1x"
     },
     "icon": "resources/icon_2.png",
     "homepage": "https://github.com/Rah1x/gotoManual",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Rah1x/gotoManual"
-    },
-    "categories": [
-        "Other"
-    ],
     "keywords": [
         "manual",
         "documentation",
@@ -44,7 +45,7 @@
         "CPP",
         "CPP Manual"
     ],
-    "main": "./extension.js",
+    "main": "./out/extension.js",
     "activationEvents": [
         "onCommand:extension.gotoGoogle",
         "onCommand:extension.gotoGoogleStackOverFlow",
@@ -61,68 +62,82 @@
                 "gotomanual.url.Google": {
                     "type": "string",
                     "default": "https://www.google.com/search?q=%SELECTION%",
-                    "description": "Google the selected text"
+                    "description": "Google the selected text",
+                    "scope": "application"
                 },
                 "gotomanual.url.GoogleStackOverFlow": {
                     "type": "string",
                     "default": "https://www.google.com/search?q=%SELECTION%+site%3Astackoverflow.com",
-                    "description": "Google the selected text for stackoverflow"
+                    "description": "Google the selected text for stackoverflow",
+                    "scope": "application"
                 },
                 "gotomanual.url.PHP": {
                     "type": "string",
                     "default": "https://www.php.net/manual/en/function.%SELECTION%.php",
-                    "description": "PHP `Function` search via php.net"
+                    "description": "PHP `Function` search via php.net",
+                    "scope": "application"
                 },
                 "gotomanual.url.CSS": {
                     "type": "string",
                     "default": "https://developer.mozilla.org/en-US/docs/Web/CSS/%SELECTION%",
-                    "description": "CSS reference search via developer.mozilla.org"
+                    "description": "CSS reference search via developer.mozilla.org",
+                    "scope": "application"
                 },
                 "gotomanual.url.Python": {
                     "type": "string",
                     "default": "https://docs.python.org/3/search.html?check_keywords=yes&area=default&q=%SELECTION%",
-                    "description": "Python reference search via docs.python.org"
+                    "description": "Python reference search via docs.python.org",
+                    "scope": "application"
                 },
                 "gotomanual.url.Golang": {
                     "type": "string",
                     "default": "https://golang.org/search?q=%SELECTION%",
-                    "description": "Golang reference search via golang.org"
+                    "description": "Golang reference search via golang.org",
+                    "scope": "application"
                 },
                 "gotomanual.url.CPP": {
                     "type": "string",
                     "default": "https://documentation.help/C-Cpp-Reference/%SELECTION%.html",
-                    "description": "C++ reference search via documentation.help"
+                    "description": "C++ reference search via documentation.help",
+                    "scope": "application"
                 }
             }
         },
         "commands": [
             {
                 "command": "extension.gotoGoogle",
-                "title": "> goTo: 'Google Search"
+                "title": "> goTo: 'Google Search",
+                "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotoGoogleStackOverFlow",
-                "title": "> goTo: 'Stackoverflow Search (google)"
+                "title": "> goTo: 'Stackoverflow Search (google)",
+                "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualPHP",
-                "title": "> goTo: PHP Function Manual"
+                "title": "> goTo: PHP Function Manual",
+                "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualCSS",
-                "title": "> goTo: CSS Manual"
+                "title": "> goTo: CSS Manual",
+                "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualPython",
-                "title": "> goTo: Python Manual"
+                "title": "> goTo: Python Manual",
+                "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualGolang",
-                "title": "> goTo: Golang Manual"
+                "title": "> goTo: Golang Manual",
+                "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualCPP",
-                "title": "> goTo: C++ Manual"
+                "title": "> goTo: C++ Manual",
+                "icon": "$(link-external)"
             }
         ],
         "menus": {
@@ -166,17 +181,23 @@
         }
     },
     "scripts": {
-        "test": "node ./test/runTest.js"
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile",
+        "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
-        "@types/glob": "^7.1.2",
-        "@types/mocha": "^5.2.6",
-        "@types/node": "^10.17.26",
-        "@types/vscode": "^1.39.0",
-        "eslint": "^5.13.0",
-        "glob": "^7.1.6",
-        "mocha": "^6.2.3",
-        "typescript": "^3.9.5",
-        "vscode-test": "^1.4.0"
+        "typescript": "^5.5.3",
+        "@types/node": "^18.19.0",
+        "@types/vscode": "^1.91.0",
+        "glob": "^7",
+        "@types/glob": "^8",
+        "mocha": "^10.6.0",
+        "@types/mocha": "^10.0.7",
+        "eslint": "^8.57.0",
+        "@typescript-eslint/eslint-plugin": "^7.15.0",
+        "@vscode/test-electron": "^2.4.0"
     }
 }

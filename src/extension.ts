@@ -1,15 +1,8 @@
 import * as vscode from 'vscode';
 
-const proj_name = "gotomanual";
-
 export function activate(context: vscode.ExtensionContext) {
-    //console.log(proj_name+' started..')
-
-    const disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
-        vscode.window.showInformationMessage('Hello World!');
-    });
-    context.subscriptions.push(disposable);
-
+    const proj_name = "gotomanual";
+    //console.log(proj_name+' started..');
     const config = vscode.workspace.getConfiguration(proj_name+'.url');
 
     //Google search - done with different keyword

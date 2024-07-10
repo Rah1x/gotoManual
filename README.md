@@ -14,9 +14,8 @@ https://github.com/Rah1x/gotoManual
 
 * PHP manual for functions only (via PHP.net),
 * CSS manual (via developer.mozilla.org)
-* Python document search (via docs.python.org)
 * Golang search (via golang.org)
-* C++ manual (via documentation.help)
+* Several other programming languages (see the list below)
 * Stachoverflow search via google
 * and the good ol google search
 
@@ -60,9 +59,16 @@ This extension contributes the following settings:
 * `gotomanual.url.Python`: url for Python reference search via docs.python.org
 * `gotomanual.url.Golang`: url for Golang reference search via golang.org
 * `gotomanual.url.CPP`: url for C++ reference search via documentation.help
+* `gotomanual.url.Rust`: url for Rust reference search via doc.rust-lang.org
+* `gotomanual.url.Perl`: url for Perl reference search via perldoc.perl.org
+* `gotomanual.url.R`: url for R reference search via rdocumentation.org
+* `gotomanual.url.Swift`: url for Swift reference search via developer.apple.com
+* `gotomanual.url.Julia`: url for Julia reference search via docs.julialang.org
+* `gotomanual.url.Matlab`: url for Matlab reference search via mathworks.com
 
 ## 1.0.0
 New version based on vscode engine ^1.91.0
+Support for more prgramming languages added
 
 ## 0.2.3
 Stackoverflow search (via google) added

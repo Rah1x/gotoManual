@@ -34,27 +34,42 @@
         "stackoverflow search",
         "php",
         "php manual",
+        "php documentation",
         "css",
         "css manual",
+        "css documentation",
         "python",
         "python manual",
+        "python documentation",
         "Golang",
         "Golang Manual",
+        "Golang Documentation",
         "C++",
         "C++ Manual",
+        "C++ Documentation",
         "CPP",
-        "CPP Manual"
+        "CPP Manual",
+        "CPP Documentation",
+        "Rust",
+        "Rust Manual",
+        "Rust Documentation",
+        "Perl",
+        "Perl Manual",
+        "Perl Documentation",
+        "R",
+        "R Manual",
+        "R Documentation",
+        "Swift",
+        "Swift Manual",
+        "Swift Documentation",
+        "Julia",
+        "Julia Manual",
+        "Julia Documentation",
+        "Matlab",
+        "Matlab Manual",
+        "Matlab Documentation"
     ],
     "main": "./out/extension.js",
-    "activationEvents": [
-        "onCommand:extension.gotoGoogle",
-        "onCommand:extension.gotoGoogleStackOverFlow",
-        "onCommand:extension.gotomanualPHP",
-        "onCommand:extension.gotomanualCSS",
-        "onCommand:extension.gotomanualPython",
-        "onCommand:extension.gotomanualGolang",
-        "onCommand:extension.gotomanualCPP"
-    ],
     "contributes": {
         "configuration": {
             "title": "Goto Manual Configs",
@@ -91,14 +106,50 @@
                 },
                 "gotomanual.url.Golang": {
                     "type": "string",
-                    "default": "https://golang.org/search?q=%SELECTION%",
-                    "description": "Golang reference search via golang.org",
+                    "default": "https://pkg.go.dev/search?q=%SELECTION%",
+                    "description": "Golang reference search via go.dev",
                     "scope": "application"
                 },
                 "gotomanual.url.CPP": {
                     "type": "string",
-                    "default": "https://documentation.help/C-Cpp-Reference/%SELECTION%.html",
+                    "default": "https://documentation.help/CppReference/%SELECTION%.html",
                     "description": "C++ reference search via documentation.help",
+                    "scope": "application"
+                },
+                "gotomanual.url.Rust": {
+                    "type": "string",
+                    "default": "https://doc.rust-lang.org/std/index.html?search=%SELECTION%",
+                    "description": "Rust reference search via doc.rust-lang.org",
+                    "scope": "application"
+                },
+                "gotomanual.url.Perl": {
+                    "type": "string",
+                    "default": "https://perldoc.perl.org/functions/%SELECTION%",
+                    "description": "Perl reference search via perldoc.perl.org",
+                    "scope": "application"
+                },
+                "gotomanual.url.R": {
+                    "type": "string",
+                    "default": "https://www.rdocumentation.org/search?q=%SELECTION%",
+                    "description": "R reference search via rdocumentation.org",
+                    "scope": "application"
+                },
+                "gotomanual.url.Swift": {
+                    "type": "string",
+                    "default": "https://developer.apple.com/search/?type=Documentation&q=%SELECTION%",
+                    "description": "Swift reference search via developer.apple.com",
+                    "scope": "application"
+                },
+                "gotomanual.url.Julia": {
+                    "type": "string",
+                    "default": "https://docs.julialang.org/en/v1/search/?q=%SELECTION%",
+                    "description": "Julia reference search via docs.julialang.org",
+                    "scope": "application"
+                },
+                "gotomanual.url.Matlab": {
+                    "type": "string",
+                    "default": "https://www.mathworks.com/help/search.html?q=%SELECTION%",
+                    "description": "Matlab reference search via mathworks.com",
                     "scope": "application"
                 }
             }
@@ -106,37 +157,67 @@
         "commands": [
             {
                 "command": "extension.gotoGoogle",
-                "title": "> goTo: 'Google Search",
+                "title": ">> goTo: 'Google Search",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotoGoogleStackOverFlow",
-                "title": "> goTo: 'Stackoverflow Search (google)",
+                "title": ">> goTo: 'Stackoverflow Search (google)",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualPHP",
-                "title": "> goTo: PHP Function Manual",
+                "title": ">> goTo: PHP Function Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualCSS",
-                "title": "> goTo: CSS Manual",
+                "title": ">> goTo: CSS Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualPython",
-                "title": "> goTo: Python Manual",
+                "title": ">> goTo: Python Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualGolang",
-                "title": "> goTo: Golang Manual",
+                "title": ">> goTo: Golang Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualCPP",
-                "title": "> goTo: C++ Manual",
+                "title": ">> goTo: C++ Manual",
+                "icon": "$(link-external)"
+            },
+            {
+                "command": "extension.gotomanualRust",
+                "title": ">> goTo: Rust Manual",
+                "icon": "$(link-external)"
+            },
+            {
+                "command": "extension.gotomanualPerl",
+                "title": ">> goTo: Perl Manual",
+                "icon": "$(link-external)"
+            },
+            {
+                "command": "extension.gotomanualR",
+                "title": ">> goTo: R Manual",
+                "icon": "$(link-external)"
+            },
+            {
+                "command": "extension.gotomanualSwift",
+                "title": ">> goTo: Swift Manual",
+                "icon": "$(link-external)"
+            },
+            {
+                "command": "extension.gotomanualJulia",
+                "title": ">> goTo: Julia Manual",
+                "icon": "$(link-external)"
+            },
+            {
+                "command": "extension.gotomanualMatlab",
+                "title": ">> goTo: Matlab Manual",
                 "icon": "$(link-external)"
             }
         ],
@@ -176,6 +257,36 @@
                     "when": "editorHasSelection && editorLangId==cpp",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualCPP"
+                },
+                {
+                    "when": "editorHasSelection && editorLangId==rust",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualRust"
+                },
+                {
+                    "when": "editorHasSelection && editorLangId==perl",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualPerl"
+                },
+                {
+                    "when": "editorHasSelection && editorLangId==r",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualR"
+                },
+                {
+                    "when": "editorHasSelection && editorLangId==swift",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualSwift"
+                },
+                {
+                    "when": "editorHasSelection && editorLangId==julia",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualJulia"
+                },
+                {
+                    "when": "editorHasSelection && editorLangId==matlab",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualMatlab"
                 }
             ]
         }

@@ -1,3 +1,4 @@
+- (10 Jul, 2024) Support for more prgramming languages added
 - (04 Jul, 2024) Upgraded to use vscode engine ^1.91.0
 - (24 Jun, 2020) Stackoverflow search (via google) added
 - (16 Jun, 2020) C++ search added

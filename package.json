@@ -107,12 +107,12 @@
                 "gotomanual.url.Python": {
                     "type": "string",
                     "default": "https://docs.python.org/3/search.html?check_keywords=yes&area=default&q=%SELECTION%",
-                    "description": "Python reference search via docs.python.org",
+                    "description": "Python3 reference search via docs.python.org",
                     "scope": "application"
                 },
                 "gotomanual.url.Golang": {
                     "type": "string",
-                    "default": "https://pkg.go.dev/search?q=%SELECTION%",
+                    "default": "https://pkg.go.dev/search?limit=5&m=symbol&q=%SELECTION%",
                     "description": "Golang reference search via go.dev",
                     "scope": "application"
                 },
@@ -189,7 +189,7 @@
             },
             {
                 "command": "extension.gotomanualPython",
-                "title": ">> goTo: Python Manual",
+                "title": ">> goTo: Python3 Manual",
                 "icon": "$(link-external)"
             },
             {

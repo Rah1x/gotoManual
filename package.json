@@ -67,7 +67,13 @@
         "Julia Documentation",
         "Matlab",
         "Matlab Manual",
-        "Matlab Documentation"
+        "Matlab Documentation",
+        "MySQL",
+        "MySQL Manual",
+        "MySQL Documentation",
+        "MariaDB",
+        "Mariadb Manual",
+        "Mariadb Documentation"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -151,6 +157,12 @@
                     "default": "https://www.mathworks.com/help/search.html?q=%SELECTION%",
                     "description": "Matlab reference search via mathworks.com",
                     "scope": "application"
+                },
+                "gotomanual.url.MySQL": {
+                    "type": "string",
+                    "default": "https://mariadb.com/kb/en/%SELECTION%/",
+                    "description": "MySQL reference search via mariadb.com",
+                    "scope": "application"
                 }
             }
         },
@@ -218,6 +230,11 @@
             {
                 "command": "extension.gotomanualMatlab",
                 "title": ">> goTo: Matlab Manual",
+                "icon": "$(link-external)"
+            },
+            {
+                "command": "extension.gotomanualMySQL",
+                "title": ">> goTo: Mariadb Manual",
                 "icon": "$(link-external)"
             }
         ],
@@ -287,6 +304,11 @@
                     "when": "editorHasSelection && editorLangId==matlab",
                     "group": "navigation@1.1",
                     "command": "extension.gotomanualMatlab"
+                },
+                {
+                    "when": "editorHasSelection && editorLangId==sql",
+                    "group": "navigation@1.1",
+                    "command": "extension.gotomanualMySQL"
                 }
             ]
         }

@@ -65,6 +65,7 @@ This extension contributes the following settings:
 * `gotomanual.url.Swift`: url for Swift reference search via developer.apple.com
 * `gotomanual.url.Julia`: url for Julia reference search via docs.julialang.org
 * `gotomanual.url.Matlab`: url for Matlab reference search via mathworks.com
+* `gotomanual.url.Mysql`: url for Mysql reference search via mariadb.com
 
 ## 1.0.0
 New version based on vscode engine ^1.91.0

@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     //rest of the extensions
     const ext_base = 'extension.gotomanual';
-    const cmds = ['PHP', 'CSS', 'Python', 'Golang', 'CPP', 'Rust', 'Perl', 'R', 'Swift', 'Julia', 'Matlab'];
+    const cmds = ['PHP', 'CSS', 'Python', 'Golang', 'CPP', 'Rust', 'Perl', 'R', 'Swift', 'Julia', 'Matlab', 'MySQL'];
     cmds.forEach((c) => {
         const cmd_m = vscode.commands.registerCommand(ext_base+c, () => {
             if (c=='PHP') {

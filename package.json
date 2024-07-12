@@ -169,72 +169,72 @@
         "commands": [
             {
                 "command": "extension.gotoGoogle",
-                "title": ">> goTo: 'Google Search",
+                "title": "> goTo: 'Google Search",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotoGoogleStackOverFlow",
-                "title": ">> goTo: 'Stackoverflow Search (google)",
+                "title": "> goTo: 'Stackoverflow Search (google)",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualPHP",
-                "title": ">> goTo: PHP Function Manual",
+                "title": "> goTo: PHP Function Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualCSS",
-                "title": ">> goTo: CSS Manual",
+                "title": "> goTo: CSS Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualPython",
-                "title": ">> goTo: Python3 Manual",
+                "title": "> goTo: Python3 Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualGolang",
-                "title": ">> goTo: Golang Manual",
+                "title": "> goTo: Golang Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualCPP",
-                "title": ">> goTo: C++ Manual",
+                "title": "> goTo: C++ Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualRust",
-                "title": ">> goTo: Rust Manual",
+                "title": "> goTo: Rust Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualPerl",
-                "title": ">> goTo: Perl Manual",
+                "title": "> goTo: Perl Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualR",
-                "title": ">> goTo: R Manual",
+                "title": "> goTo: R Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualSwift",
-                "title": ">> goTo: Swift Manual",
+                "title": "> goTo: Swift Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualJulia",
-                "title": ">> goTo: Julia Manual",
+                "title": "> goTo: Julia Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualMatlab",
-                "title": ">> goTo: Matlab Manual",
+                "title": "> goTo: Matlab Manual",
                 "icon": "$(link-external)"
             },
             {
                 "command": "extension.gotomanualMySQL",
-                "title": ">> goTo: Mariadb Manual",
+                "title": "> goTo: Mariadb Manual",
                 "icon": "$(link-external)"
             }
         ],

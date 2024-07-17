@@ -68,8 +68,8 @@ This extension contributes the following settings:
 * `gotomanual.url.Mysql`: url for Mysql reference search via mariadb.com
 
 ## 1.0.0
-New version based on vscode engine ^1.91.0
-Support for more prgramming languages added
+New version based on vscode engine ^1.91.0\
+Support for more programming languages added
 
 ## 0.2.3
 Stackoverflow search (via google) added

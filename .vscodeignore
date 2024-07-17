@@ -7,3 +7,5 @@ src/**
 tsconfig.json
 vsc-extension-quickstart.md
 vscode-extension-samples
+*.launch.jsonc
+*.code-workspace
